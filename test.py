@@ -12,7 +12,7 @@ def main():
         menu_items = response['menu_items'].strip().split(",")
         st.subheader("Menu Items")
         for item in menu_items:
-            st.write("-", item.strip())
+            st.write(item.strip())
 
 if __name__ == "__main__":
     main()
