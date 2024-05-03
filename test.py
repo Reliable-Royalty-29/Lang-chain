@@ -13,7 +13,7 @@ def main():
         st.subheader("Menu Items")
         menu_items = response['menu_items'].strip().split(",")
         for item in menu_items:
-            st.write(f"{item.split()}")
+            st.write(f"{item}")
 
 if __name__ == "__main__":
     main()
