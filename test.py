@@ -1,19 +1,14 @@
 import streamlit as st
-from langchain_helper import generate_restaurant_name_and_items
+import langchain_helper
 
-def main():
-    st.title("Restaurant Name Generator")
+st.title("Restaurant Name Generator")
 
-    cuisine = st.sidebar.selectbox("Pick a Cuisine", ("Indian", "Italian", "Mexican", "Arabic", "American"))
+cuisine = st.sidebar.selectbox("Pick a Cuisine", ("Indian", "Italian", "Mexican", "Arabic", "American"))
 
-    if cuisine:
-        response = generate_restaurant_name_and_items(cuisine)
-        st.write("---")
-        st.header(response['restaurant_name'].strip())
-        st.subheader("Menu Items")
-        menu_items = response['menu_items'].strip().split(",")
-        for item in menu_items:
-            st.write(f"{item}")
-
-if __name__ == "__main__":
-    main()
+if cuisine:
+    response = langchain_helper.generate_restaurant_name_and_items(cuisine)
+    st.header(response['restaurant_name'].strip())
+    menu_items = response['menu_items'].strip().split(",")
+    st.write("**Menu Items**")
+    for item in menu_items:
+        st.write("-", item)
