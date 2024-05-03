@@ -8,11 +8,12 @@ def main():
 
     if cuisine:
         response = generate_restaurant_name_and_items(cuisine)
+        st.write("---")
         st.header(response['restaurant_name'].strip())
-        menu_items = response['menu_items'].strip().split(",")
         st.subheader("Menu Items")
-        for item in menu_items:
-            st.write(item.strip())
+        menu_items = response['menu_items'].strip().split(",")
+        for idx, item in enumerate(menu_items, start=1):
+            st.write(f"{idx}. {item.strip()}")
 
 if __name__ == "__main__":
     main()
