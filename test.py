@@ -10,5 +10,5 @@ if cuisine:
     st.header(response['restaurant_name'].strip())
     menu_items = response['menu_items'].strip().split(",")
     st.write("**Menu Items**")
-    for item in menu_items:
-        st.text(item)
+    for index, item in enumerate(menu_items, start=1):
+        st.text(f"{index}. {item.strip()}")
