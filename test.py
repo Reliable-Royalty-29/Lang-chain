@@ -12,4 +12,4 @@ if cuisine:
     st.write("**Menu Items**")
     for item in menu_items:
         st.text("Here is the list:")
-         st.text(item)
+        st.text(item)
